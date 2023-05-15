@@ -1,4 +1,4 @@
-var GHPATH = '/niccagequest';
+var GHPATH = '/CageQuest';
 var APP_PREFIX = 'pcpwa_';
 var VERSION = 'version_001';
 var URLS = [

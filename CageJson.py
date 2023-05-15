@@ -29,6 +29,7 @@ for div in all_films_html.find_all('div'):
         'cover' : movie.get('cover url')
     }
     movies.append(movie_dict)
-print(json.dumps(movies, indent=3))
+# print(json.dumps(movies, indent=3))
 
-with open('')
+with open('movies.json', 'w') as f:
+    json.dump(movies, f, indent=3)

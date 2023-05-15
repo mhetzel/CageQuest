@@ -1,9 +1,9 @@
 var GHPATH = '/CageQuest';
 var APP_PREFIX = 'pcpwa_';
-var VERSION = 'version_001';
+var VERSION = 'version_002';
 var URLS = [
   `${GHPATH}/`,
-  `${GHPATH}/index.html`,
+
   `${GHPATH}/src/libs/jquery-3.6.0.min.js`,
 ]
 

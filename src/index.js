@@ -9,7 +9,13 @@ $.getJSON('movies.json', function(data) {
 			container_div.append('<div class="image"><img src="android/comingsoon.jpg" width="50" height="75"></div>')
 		 }
 		 
-		 container_div.append('<div class="text">' + f['title'] + ' (' + f['year'] + ')</br>' + f['character']+'</div>')
+		 text_div = $('<div class="text"></div>')
+
+	
+		 text_div.append('<input type="checkbox" id="' + f['id'] + '" name="' + f['id'] + '">')
+		 text_div.append('<label for="' + f['id'] + '">' + f['title'] + ' (' + f['year'] + ')</br>' + f['character']+'</label><br>')
+
+		 container_div.append(text_div)
 		 $('#unwatched').append(container_div)
      });
 });

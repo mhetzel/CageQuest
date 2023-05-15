@@ -18,7 +18,8 @@ all_films_html = filmography_html.find_next_sibling("div")
 movies = []
 
 for div in all_films_html.find_all('div'):
-    movie = ia.get_movie(div.b.a['href'].split('/')[2].strip('tt'))
+    movie_id = div.b.a['href'].split('/')[2].strip('tt')
+    movie = ia.get_movie(movie_id)
     print(div.b.a.text.strip('\n').strip())
     movie_dict = {
         'title' : div.b.a.text.strip('\n').strip(),
@@ -26,7 +27,8 @@ for div in all_films_html.find_all('div'):
         'character' : div.br.next_sibling.strip('\n').strip(),
         'plot' : movie.get('plot'),
         'genres' : movie.get('genres'),
-        'cover' : movie.get('cover url')
+        'cover' : movie.get('cover url'),
+        'id' : movie_id
     }
     movies.append(movie_dict)
 # print(json.dumps(movies, indent=3))

@@ -1,6 +1,7 @@
 
 fetch('https://m.imdb.com/name/nm0000115/fullcredits', {            
         method: 'GET',
+	mode: 'no-cors'
     }).then(function (response) {
 	// The API call was successful!
 	return response.text();

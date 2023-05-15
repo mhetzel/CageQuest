@@ -15,6 +15,28 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0d1b19"/>
     
+
+    <style>
+      .container {
+        display: flex;
+        align-items: left;
+        justify-content: left;
+        width: 600px;
+        height: 150px;
+      }
+      img {
+        max-width: 100%
+      }
+      .image {
+        flex-basis: 10%;
+        /* width: 100px; */
+      }
+      .text {
+        font-size: 20px;
+        width: fit-content;
+      }
+    </style>
+
   </head>
 
   <body>
@@ -53,13 +75,15 @@
         }
     </script>
     
-     <section>
-      
-      <article>
 
+      <div id="unwatched">
+        <h1>Unwatched</h1>
+      </div>
+      <div id="watched">
+        <h1>Watched</h1>
+      </div>
         
-      </article>
-    </section>
+
         
     <script src="src/index.js"></script>
 

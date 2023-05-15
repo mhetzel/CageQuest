@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Try and watch all Nic Cage's Movies">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plant Care</title>
+    <link rel="icon" type="image/x-icon" href="img/leaf.ico">
+    <link rel="shortcut icon" type="image/png" href="img/icon-128x128.png">
+    <link rel="apple-touch-icon" href="img/icon-128x128.png">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d1b19"/>
+    
+  </head>
+
+  <body>
+        
+    <script src="src/libs/jquery-3.6.0.min.js"></script>
+
+    <script>
+      jQuery.event.special.touchstart = {
+          setup: function( _, ns, handle ) {
+              this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+          }
+      };
+      jQuery.event.special.touchmove = {
+          setup: function( _, ns, handle ) {
+              this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+          }
+      };
+      jQuery.event.special.wheel = {
+          setup: function( _, ns, handle ){
+              this.addEventListener("wheel", handle, { passive: true });
+          }
+      };
+      jQuery.event.special.mousewheel = {
+          setup: function( _, ns, handle ){
+              this.addEventListener("mousewheel", handle, { passive: true });
+          }
+      };
+    </script>
+    
+    <script>
+        if (navigator.serviceWorker) {
+          navigator.serviceWorker.register (
+            '/niccagequest/sw.js',
+            {scope: '/niccagequest/'}
+          )
+        }
+    </script>
+    
+     <section>
+      
+      <article>
+
+        
+      </article>
+    </section>
+        
+    <script src="src/index.js"></script>
+
+
+  </body>
+  <footer>
+
+  </footer>
+</html>

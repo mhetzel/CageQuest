@@ -4,8 +4,8 @@
   "theme_color": "#0d1b19",
   "background_color": "#0d1b19",
   "display": "fullscreen",
-  "scope": "/niccagequest/",
-  "start_url": "/niccagequest/",
+  "scope": "/CageQuest/",
+  "start_url": "/CageQuest/",
     "icons": [
     {
       "src": "android/android-launchericon-512-512.png",

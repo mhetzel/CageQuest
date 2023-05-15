@@ -1,5 +1,7 @@
 
-fetch('https://m.imdb.com/name/nm0000115/fullcredits').then(function (response) {
+fetch('https://m.imdb.com/name/nm0000115/fullcredits', {            
+        method: 'GET',
+    }).then(function (response) {
 	// The API call was successful!
 	return response.text();
 }).then(function (html) {

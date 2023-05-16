@@ -23,7 +23,10 @@ function loadJson() {
 			
 			text_div = $('<div class="text"></div>')
    
-			check_box = $('<input type="checkbox" id="' + f['id'] + '" name="movie_id" value="' + f['id'] + '">')
+			check_box = $('<input type="checkbox" id="' + f['id'] + '" name="movie_id" value="' + f['id'] + '">');
+			if (watched.includes(f['id'])) {
+			  check_box.prop('checked', true);
+			}
    
 			check_box.change(function() {
 			   if ($(this).is(':checked')) {
@@ -34,12 +37,17 @@ function loadJson() {
 			   }
 			   else {
 				   console.log(`${this.value} is unchecked`);
+				   const index = watched.indexOf(this.value);
+				   if (index > -1) { // only splice array when item is found
+					  watched.splice(index, 1); // 2nd parameter means remove one item only
+				   }
+				   localStorage.setItem('userWatched', watched)
+				   loadJson()
 			   }
 			});
 	   
 			text_div.append(check_box)
 			text_div.append('<label for="' + f['id'] + '">' + f['title'] + ' (' + f['year'] + ')</br>' + f['character']+'</label><br>')
-   
 			container_div.append(text_div)
 			if (watched.includes(f['id'])) {
 			   $('#watched').append(container_div)

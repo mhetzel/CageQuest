@@ -2,7 +2,7 @@ watched = []
 
 user_watched = localStorage.getItem('userWatched');
 if (user_watched) {
-	watched = user_watched
+	watched = user_watched.split(',');
 }
 
 function loadJson() {

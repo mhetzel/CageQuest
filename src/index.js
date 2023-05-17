@@ -5,14 +5,14 @@ if (user_watched) {
 	watched = user_watched.split(',');
 }
 
+watched_count = watched.length;
+
 function loadJson() {
 	$.getJSON('movies.json', function(data) {
 		$('#watched').empty()
-		$('#watched').append('<h1>Watched</h1>')
 		$('#unwatched').empty()
-		$('#unwatched').append('<h1>Unwatched</h1>')
+		unwatched_count = data.length;
 		$.each(data, function(i, f) {
-			// console.log(f)
 			container_div = $('<div class="container"></div>')
 			if (f['cover']) {
 			   container_div.append('<div class="image"><img src="'+ f['cover'] +'" width="50" height="75"></div>')
@@ -54,6 +54,8 @@ function loadJson() {
 			} else {
 			   $('#unwatched').append(container_div)
 			}
+			$('#unwatched_count').text(`${unwatched_count}`);
+			$('#watched_count').text(watched_count);
 		});
    });
 }

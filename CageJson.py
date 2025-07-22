@@ -1,6 +1,7 @@
 import json
 import requests
 from bs4 import BeautifulSoup
+import imdb
 from imdb import Cinemagoer
 import imdb.helpers as helpers
 

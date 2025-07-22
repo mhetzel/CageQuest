@@ -3,11 +3,9 @@ import requests
 from bs4 import BeautifulSoup
 from imdb import Cinemagoer
 import imdb.helpers as helpers
-from imdb.Person import Person
-Person.default_info
 
 ia = Cinemagoer()
-
+print(ia.get_person_infoset())
 cage = ia.get_person('0000115')
 print(cage.keys())
 

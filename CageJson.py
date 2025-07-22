@@ -5,8 +5,9 @@ from imdb import Cinemagoer
 import imdb.helpers as helpers
 
 ia = Cinemagoer()
-people = ia.search_person('nicolas')
-print(people)
+
+cage = ia.get_person('0000115')
+print(cage)
 
 # html = requests.get('https://m.imdb.com/name/nm0000115/?showAllCredits=true', timeout=50)
 # # print(html.text)

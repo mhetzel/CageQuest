@@ -6,7 +6,7 @@ import imdb.helpers as helpers
 
 ia = Cinemagoer()
 cage = ia.get_person_filmography('0000115')
-print(cage.keys())
+print(cage['titlesRefs'].keys())
 
 
 # html = requests.get('https://m.imdb.com/name/nm0000115/?showAllCredits=true', timeout=50)

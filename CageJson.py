@@ -37,5 +37,5 @@ for div in divs:
 #     movies.append(movie_dict)
 # print(json.dumps(movies, indent=3))
 
-with open('movies.json', 'w') as f:
-    json.dump(movies, f, indent=3)
+# with open('movies.json', 'w') as f:
+#     json.dump(movies, f, indent=3)

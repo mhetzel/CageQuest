@@ -7,9 +7,13 @@ import imdb.helpers as helpers
 ia = Cinemagoer()
 
 
-html = requests.get('https://m.imdb.com/name/nm0000115/fullcredits', timeout=50)
+html = requests.get('https://m.imdb.com/name/nm0000115/?showAllCredits=true', timeout=50)
 # print(html.text)
 soup = BeautifulSoup(html.text, 'html.parser')
+
+divs = soup.find_all(class_='.ipc-metadata-list-summary-item__tc')
+for div in divs:
+    print(div.a.text)
 
 filmography_html = soup.find(id='filmo-head-actor')
 

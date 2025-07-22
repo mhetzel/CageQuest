@@ -8,8 +8,8 @@ ia = Cinemagoer()
 cage = ia.get_person_filmography('0000115')
 
 
-for title in cage['titleRefs']:
-  print(title, cage['titleRefs'][title])
+for title in cage['titlesRefs']:
+  print(title, cage['titlesRefs'][title])
 
 
 # html = requests.get('https://m.imdb.com/name/nm0000115/?showAllCredits=true', timeout=50)

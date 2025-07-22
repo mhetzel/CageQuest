@@ -5,7 +5,7 @@ import imdb
 from imdb import Cinemagoer
 import imdb.helpers as helpers
 
-moviesDB = Cinemagoer()
+moviesDB = moviesDB = imdb.IMDb()
 
 
 ActorId = "0000115"

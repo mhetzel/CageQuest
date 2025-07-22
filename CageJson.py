@@ -4,12 +4,20 @@ from bs4 import BeautifulSoup
 from imdb import Cinemagoer
 import imdb.helpers as helpers
 
-ia = Cinemagoer()
-cage = ia.get_person_filmography('0000115')
+moviesDB = Cinemagoer()
 
 
-for title in cage['titlesRefs']:
-  print(title, cage['titlesRefs'][title])
+ActorId = "0000115"
+person = moviesDB.get_person(ActorId)
+#Actor's name
+print (person)
+actor_work = moviesDB.get_person_filmography(ActorId)
+for movie in actor_work['data']['filmography']['actor'] :
+    try:
+        print (movie.movieID, movie['title'], movie.currentRole, movie['year'])
+    except KeyError:
+        #print("No Year for the movie")
+        print (movie.movieID, movie['title'], movie.currentRole)
 
 
 # html = requests.get('https://m.imdb.com/name/nm0000115/?showAllCredits=true', timeout=50)

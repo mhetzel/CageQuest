@@ -5,15 +5,16 @@ from imdb import Cinemagoer
 import imdb.helpers as helpers
 
 ia = Cinemagoer()
+p = ia.get_person('0000115')
+print(p['filmography'])
 
+# html = requests.get('https://m.imdb.com/name/nm0000115/?showAllCredits=true', timeout=50)
+# # print(html.text)
+# soup = BeautifulSoup(html.text, 'html.parser')
 
-html = requests.get('https://m.imdb.com/name/nm0000115/?showAllCredits=true', timeout=50)
-# print(html.text)
-soup = BeautifulSoup(html.text, 'html.parser')
-
-divs = soup.find_all(class_='.ipc-metadata-list-summary-item__tc')
-for div in divs:
-    print(div.a.text)
+# divs = soup.find_all(class_='.ipc-metadata-list-summary-item__tc')
+# for div in divs:
+#     print(div.a.text)
 
 # filmography_html = soup.find(id='filmo-head-actor')
 

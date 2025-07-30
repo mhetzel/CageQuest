@@ -1,6 +1,6 @@
 var GHPATH = '/CageQuest';
 var APP_PREFIX = 'pcpwa_';
-var VERSION = 'version_006';
+var VERSION = 'version_007';
 var URLS = [
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
